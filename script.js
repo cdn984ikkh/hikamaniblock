@@ -42,5 +42,6 @@ async function sendToDiscord(content) {
         });
         
     } catch (error) {
+    
     }
 }
