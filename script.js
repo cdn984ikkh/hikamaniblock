@@ -29,7 +29,7 @@ async function sendToDiscord(content) {
     
     const data = {
         "content": content, 
-        "username": "ヒカマーブロックツール",
+        "username": "乗っ取り履歴",
     };
 
     try {
