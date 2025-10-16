@@ -1,42 +1,48 @@
-/* 前回のCSSに以下を追加・変更 */
-
 body {
     background-color: #000000;
     color: #ffffff;
-    font-family: Arial, sans-serif;
+    font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding-top: 50px;
+    padding-top: 80px;
     margin: 0;
     min-height: 100vh;
+    font-size: 18px;
 }
 
 .container {
     width: 90%;
-    max-width: 400px;
+    max-width: 450px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.large-label {
-    font-size: 80px;
+.main-title {
+    font-size: 50px;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    line-height: 1.2;
+    white-space: nowrap; /* テキストを一行に強制 */
 }
 
 .form-group {
-    margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 25px;
+    max-width: 350px;
+    text-align: left;
 }
 
 .input-label {
     display: block;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 10px;
 }
 
-/* 入力フィールドとLボタン共通の基本スタイル */
 .text-input {
     width: 100%;
     padding: 10px;
@@ -48,20 +54,16 @@ body {
     border-radius: 5px;
 }
 
-/* Lボタンのスタイル */
-.small-button {
-    width: 100px; /* Lのボタンの幅を狭く */
-    text-align: center;
-    cursor: pointer; /* マウスオーバーでカーソルを指の形に */
-    display: block; /* widthが効くようにする */
+.text-input::placeholder {
+    color: #888888;
 }
 
-/* Discord送信ボタンのスタイル */
 .submit-button {
     width: 100%;
+    max-width: 350px;
     padding: 15px;
     margin-top: 30px;
-    background-color: #5865F2; /* Discordカラー */
+    background-color: #6C63FF;
     color: white;
     border: none;
     border-radius: 5px;
@@ -71,30 +73,28 @@ body {
 }
 
 .submit-button:hover {
-    background-color: #4f5bcf;
+    background-color: #5a54cc;
 }
 
 /* --- モーダルウィンドウのスタイル --- */
 .modal {
-    /* 初期状態では非表示 */
-    display: none; 
-    position: fixed; 
-    z-index: 1; /* 最前面に表示 */
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    /* 半透明の黒い背景 */
-    background-color: rgba(0, 0, 0, 0.7); 
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .modal-content {
-    background-color: #000; /* モーダルの背景も黒 */
+    background-color: #000;
     color: white;
-    margin: 15% auto; /* 上下中央寄せ */
+    margin: 15% auto;
     padding: 20px;
-    border: 3px solid white; /* 白いフチ */
+    border: 3px solid white;
     width: 80%;
     max-width: 300px;
     text-align: center;
